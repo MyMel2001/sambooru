@@ -281,7 +281,7 @@ router.post('/upload', upload.single('file'), (req, res) => {
             let rawAutoTags = '';
             
             const ollamaGenerate = async (b64) => {
-                const response = await ollama.generate({ model: 'moondream', prompt: prompt, images: [b64], stream: false });
+                const response = await ollama.generate({ model: 'gemma3:4b', prompt: prompt, images: [b64], stream: false });
                 return response.response;
             };
 
